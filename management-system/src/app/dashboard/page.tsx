@@ -89,18 +89,22 @@ function DashboardPage() {
         let finalizadas = 0;
         let totalTareas = 0;
 
+      
         data.forEach((project: Project) => {
           totalTareas += project.tasks.length;
-          project.tasks.forEach((task) => {
-            console.log('Tarea:', task.name, 'Estado:', task.status); //Registro para verificar el estado de las tareas
-            if (task.status === 'Completado') {
-              realizadas += 1;
-            } else if (task.status === 'Pendiente') {
-              pendientes += 1;
-            } else if (task.status === 'En progreso') {
-              finalizadas += 1;
-            }
-          });
+          if (project.tasks) {
+            totalTareas += project.tasks.length;
+              project.tasks.forEach((task) => {
+                if (!task) return; // Verifica si la tarea existe
+                console.log('Tarea:', task.name, 'Estado:', task.status); //Registro para verificar el estado de las tareas
+                if (task.status === 'Completado') {
+                  realizadas += 1;
+                } else if (task.status === 'Pendiente') {
+                  pendientes += 1;
+                } else if (task.status === 'En progreso') {
+                  finalizadas += 1;
+                }
+          })};
         });
 
         setTaskStats({ realizadas, pendientes, finalizadas });
