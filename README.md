@@ -8,3 +8,5 @@ Proyecto 1 DPS 2025 UDB - sistema de gestión de proyectos usando React
   <tr><td>Douglas Eduardo Mejia Novoa</td><td>MN142088</td></tr>
   <tr><td>Monica Raquel Iglesias Morales</td><td>IM200679</td></tr>
 </table>
+#Ruta vercel: 
+https://proyecto1-dps-2025.vercel.app/
